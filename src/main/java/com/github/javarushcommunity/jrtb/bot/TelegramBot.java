@@ -23,10 +23,6 @@ public class TelegramBot extends TelegramLongPollingBot {
     private String token;
 
 
-
-
-
-
     @Override
     public void onUpdateReceived(Update update) {
         if(update.hasMessage() && update.getMessage().hasText()) {
@@ -36,7 +32,6 @@ public class TelegramBot extends TelegramLongPollingBot {
             SendMessage sm = new SendMessage();
             sm.setChatId(chatId);
             sm.setText(message);
-
 
             try {
                 execute(sm);
